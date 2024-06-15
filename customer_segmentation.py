@@ -40,7 +40,7 @@ elif choice == "Thống kê chung":
         df['Date'] = pd.to_datetime(df['Date'],dayfirst=True)
         # global lines
         st.dataframe(df)
-        st.code(df)
+        # st.code(df)
         tab1, tab2 = st.tabs(["Doanh thu", "Khách hàng"])
         with tab1:
             st.header("Doanh thu")
@@ -82,7 +82,7 @@ elif choice == "Thống kê chung":
             #Code
             df_freq = pd.DataFrame(df['Member_number'].value_counts().reset_index())
             df_freq.columns = ['Member_number', 'Count']
-            st.subheader('Top 4 những khách hàng mua nhiều nhất: ')
+            st.subheader('Top 3 những khách hàng mua nhiều nhất: ')
             st.markdown("- Mã Member: {} - Số lần: {}".format(df_freq.Member_number.iloc[0], df_freq.Count.iloc[0]))
             st.markdown("- Mã Member: {} - Số lần: {}".format(df_freq.Member_number.iloc[1], df_freq.Count.iloc[1]))
             st.markdown("- Mã Member: {} - Số lần: {}".format(df_freq.Member_number.iloc[2], df_freq.Count.iloc[2]))
